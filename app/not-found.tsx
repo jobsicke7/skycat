@@ -24,7 +24,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
-    flexDirection: "column" as "column",
+    flexDirection: "column" as const, // 수정된 부분
   },
   button: {
     marginTop: "20px",
