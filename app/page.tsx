@@ -1,48 +1,10 @@
-"use client";
 
-import { useState } from "react";
-
-export default function HomePage() {
-  const [channelId, setChannelId] = useState("");
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<string | null>(null);
-
-  const sendMessage = async () => {
-    try {
-      const res = await fetch("/api/send-message", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ channelId, message }),
-      });
-
-      const data = await res.json();
-      if (res.ok) {
-        setStatus("Message sent successfully!");
-      } else {
-        setStatus(`Error: ${data.error}`);
-      }
-    } catch (error) {
-      setStatus("An error occurred.");
-    }
-  };
-
+export default function Home() {
   return (
-    <div>
-      <h1>Send a Message to Discord</h1>
-      <input
-        type="text"
-        placeholder="Channel ID"
-        value={channelId}
-        onChange={(e) => setChannelId(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <button onClick={sendMessage}>Send Message</button>
-      {status && <p>{status}</p>}
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <title>잡식이</title>
+    개발중...
     </div>
+    
   );
 }
