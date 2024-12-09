@@ -1,11 +1,39 @@
+"use client";
 
-export default function NotFound() {
-    return (
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <title>잡식이</title>
-      404
-      </div>
-      
-    );
-  }
-  
+import { useRouter } from "next/navigation";
+
+export default function Home() {
+  const router = useRouter();
+
+  const navigateToHome = () => {
+    router.push("/");
+  };
+
+  return (
+    <div style={styles.container}>
+      <button style={styles.button} onClick={navigateToHome}>
+        Go to Home
+      </button>
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    flexDirection: "column" as "column",
+  },
+  button: {
+    marginTop: "20px",
+    padding: "10px 20px",
+    fontSize: "16px",
+    backgroundColor: "blue",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+};
