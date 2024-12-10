@@ -1,7 +1,8 @@
 import NextAuth from "next-auth";
 import NaverProvider from "next-auth/providers/naver";
 
-export const authOptions = {
+// NextAuth 설정
+const handler = NextAuth({
   providers: [
     NaverProvider({
       clientId: process.env.NAVER_CLIENT_ID!,
@@ -16,9 +17,8 @@ export const authOptions = {
       }
       return baseUrl;
     },
-  },  
-};
+  },
+});
 
-const handler = NextAuth(authOptions);
-
+// GET, POST 메서드로 핸들러 내보내기
 export { handler as GET, handler as POST };
