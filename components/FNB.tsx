@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/FNB.module.css";
-import Link from "next/link";
+
 
 const FNB: React.FC = () => {
   return (
