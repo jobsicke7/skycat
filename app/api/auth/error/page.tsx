@@ -1,9 +1,10 @@
-"use client"; // 클라이언트 컴포넌트임을 명시
+"use client";
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Suspense } from "react";
 
-export default function ErrorPage() {
+function ErrorContent() {
   const searchParams = useSearchParams();
   const error = searchParams?.get("error") || "default";
 
@@ -24,5 +25,13 @@ export default function ErrorPage() {
         홈으로 돌아가기
       </Link>
     </div>
+  );
+}
+
+export default function ErrorPage() {
+  return (
+    <Suspense fallback={<div>로딩 중...</div>}>
+      <ErrorContent />
+    </Suspense>
   );
 }
