@@ -4,7 +4,7 @@ interface ErrorPageProps {
   searchParams?: { [key: string]: string };
 }
 
-export default function ErrorPage({ searchParams }: ErrorPageProps) {
+export default async function ErrorPage({ searchParams }: { searchParams?: { [key: string]: string } }) {
   const errorMessages: Record<string, string> = {
     Unauthorized: "로그인이 필요합니다.",
     Forbidden: "접근 권한이 없습니다.",
