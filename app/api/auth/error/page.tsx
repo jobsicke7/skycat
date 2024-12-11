@@ -1,9 +1,5 @@
 import Link from "next/link";
 
-interface ErrorPageProps {
-  searchParams?: { [key: string]: string };
-}
-
 export default async function ErrorPage({ searchParams }: { searchParams?: { [key: string]: string } }) {
   const errorMessages: Record<string, string> = {
     Unauthorized: "로그인이 필요합니다.",
