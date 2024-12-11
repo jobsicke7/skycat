@@ -14,7 +14,7 @@ export async function middleware(req: NextRequest) {
     }
 
     // 네이버 ID가 "jslearn"이 아니면 권한 없음
-    if (token.sub !== "jslearn") {
+    if (token.sub !== "jobsicke") {
       return NextResponse.redirect(new URL("/auth/error?error=Forbidden", req.url));
     }
   }
