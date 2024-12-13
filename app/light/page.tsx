@@ -16,6 +16,7 @@ const TrafficLight: React.FC = () => {
       if (!response.ok) throw new Error('Failed to fetch');
       const data: { color: TrafficLightColor } = await response.json();
       setColor(data.color); // API로부터 가져온 색상을 상태에 반영
+      console.log(`Initial traffic light color: ${data.color}`); // 초기 색상 로그 출력
     } catch (error) {
       console.error('Failed to fetch traffic light color:', error);
     }
@@ -27,6 +28,13 @@ const TrafficLight: React.FC = () => {
     const interval = setInterval(fetchTrafficLightColor, 2000); // 2초 간격으로 데이터 업데이트
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
   }, []);
+
+  // 색상이 변경될 때마다 콘솔에 로그 출력
+  useEffect(() => {
+    if (color) {
+      console.log(`Traffic light color changed to: ${color}`);
+    }
+  }, [color]);
 
   return (
     <div className={styles.trafficLight}>
