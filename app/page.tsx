@@ -22,7 +22,7 @@ const TrafficLightColor = () => {
     };
 
     fetchColor();
-    const interval = setInterval(fetchColor, 5000);
+    const interval = setInterval(fetchColor, 1000);
 
     return () => clearInterval(interval);
   }, []);
