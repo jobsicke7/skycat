@@ -1,3 +1,4 @@
+// app/traffic-light/page.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -25,8 +26,7 @@ const TrafficLight = () => {
   }, []);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
-      <h1>Traffic Light</h1>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "20px", padding: "20px" }}>
       <div style={{ width: "100px", height: "300px", backgroundColor: "#333", borderRadius: "10px", padding: "10px", display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
         <div
           style={{
