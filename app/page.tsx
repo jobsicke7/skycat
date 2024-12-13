@@ -9,7 +9,7 @@ const TrafficLightColor = () => {
   useEffect(() => {
     const fetchColor = async () => {
       try {
-        const response = await fetch("https://api.jobsicke.xyz/api/traffic-light");
+        const response = await fetch("https://api.jobsicke.xyz/traffic-light");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

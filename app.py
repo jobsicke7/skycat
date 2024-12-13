@@ -25,7 +25,7 @@ def cycle_traffic_light():
 thread = threading.Thread(target=cycle_traffic_light, daemon=True)
 thread.start()
 
-@app.route("/api/traffic-light", methods=["GET"])
+@app.route("/traffic-light", methods=["GET"])
 def get_traffic_light():
     return jsonify(current_state)
 
