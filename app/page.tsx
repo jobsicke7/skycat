@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 
 const TrafficLightColor = () => {
-  const [color, setColor] = useState<string>("loading...");
+  const [color, setColor] = useState<string>("loading....");
 
   useEffect(() => {
     const fetchColor = async () => {
