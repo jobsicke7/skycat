@@ -14,7 +14,6 @@ const TrafficLightColor = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log(data);  // 응답 데이터 로그
         setColor(data.color);
       } catch (error) {
         console.error("Failed to fetch traffic light color:", error);
