@@ -3,7 +3,8 @@ import threading
 import time
 
 app = Flask(__name__)
-
+from flask_cors import CORS
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 # Traffic light states
 traffic_states = [
     {"color": "green", "duration": 10},

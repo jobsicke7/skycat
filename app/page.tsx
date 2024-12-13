@@ -9,7 +9,7 @@ const TrafficLightColor = () => {
   useEffect(() => {
     const fetchColor = async () => {
       try {
-        const response = await fetch("http://160.22.155.156:5000/api/traffic-light");
+        const response = await fetch("https://1704-160-22-155-156.ngrok-free.app/api/traffic-light");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
