@@ -1,10 +1,10 @@
 from flask import Flask, jsonify
 import threading
 import time
-
-app = Flask(__name__)
 from flask_cors import CORS
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+app = Flask(__name__)
+CORS(app)  # CORS 허용
+
 # Traffic light states
 traffic_states = [
     {"color": "green", "duration": 10},
